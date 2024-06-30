@@ -1,63 +1,92 @@
-###############################################################################
-# Set default behavior to automatically normalize line endings.
-###############################################################################
-* text=auto
+//1.Doira yuzi va aylana uzunligini hisoblash
+//Console dan raduisni qiymatini oling va erkanga doiraning yuzi (S=pi*radius^2) va 
+//aylana uzunligini (L=2*pi*radius) erkanga chiqaring.
+//Input: radius = 3
+//Output: S = 28.2743338823081, L = 18.8495559215388
+//--------------
+//Input: radius = 4.23
+//Output: S = 56.2122031914168, L = 26.5778738493697
 
-###############################################################################
-# Set default behavior for command prompt diff.
-#
-# This is need for earlier builds of msysgit that does not have it on by
-# default for csharp files.
-# Note: This is only used by command line
-###############################################################################
-#*.cs     diff=csharp
+namespace praktikum_task1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("radiusni kiriting (input):");
+            string radius = Console.ReadLine();
+            double rad = Convert.ToDouble(radius);
 
-###############################################################################
-# Set the merge driver for project and solution files
-#
-# Merging from the command prompt will add diff markers to the files if there
-# are conflicts (Merging from VS is not affected by the settings below, in VS
-# the diff markers are never inserted). Diff markers may cause the following 
-# file extensions to fail to load in VS. An alternative would be to treat
-# these files as binary and thus will always conflict and require user
-# intervention with every merge. To do so, just uncomment the entries below
-###############################################################################
-#*.sln       merge=binary
-#*.csproj    merge=binary
-#*.vbproj    merge=binary
-#*.vcxproj   merge=binary
-#*.vcproj    merge=binary
-#*.dbproj    merge=binary
-#*.fsproj    merge=binary
-#*.lsproj    merge=binary
-#*.wixproj   merge=binary
-#*.modelproj merge=binary
-#*.sqlproj   merge=binary
-#*.wwaproj   merge=binary
+            double S = Math.PI * (rad * rad);
+            double L = 2 * Math.PI * rad;
 
-###############################################################################
-# behavior for image files
-#
-# image files are treated as binary by default.
-###############################################################################
-#*.jpg   binary
-#*.png   binary
-#*.gif   binary
+            Console.WriteLine($"Doira yuzasi(output):{S}");
+            Console.WriteLine($"Aylana uzunligi (output):{L}");
 
-###############################################################################
-# diff behavior for common document formats
-# 
-# Convert binary document formats to text before diffing them. This feature
-# is only available from the command line. Turn it on by uncommenting the 
-# entries below.
-###############################################################################
-#*.doc   diff=astextplain
-#*.DOC   diff=astextplain
-#*.docx  diff=astextplain
-#*.DOCX  diff=astextplain
-#*.dot   diff=astextplain
-#*.DOT   diff=astextplain
-#*.pdf   diff=astextplain
-#*.PDF   diff=astextplain
-#*.rtf   diff=astextplain
-#*.RTF   diff=astextplain
+
+
+        }
+    }
+}
+
+//2.Valyuta konvertri
+//Bir valyutadagi summani sumga aylantiruvchi dastur tuzing. Summa va valyuta kursini 
+//e’lon qiling va konvertatsiya qilingan summani hisoblang. Natijani ekranga chiqaring.
+//Input: qiymat = 2, kurs = 12400 so’m
+//Output: 24800 so’m
+//----------------
+//Input: qiymat = 7.6, kurs = 12400 so’m
+//Output: 94240 so’m
+
+
+namespace praktikum_task1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("valyuta kursi (input):");
+            string kurs1 = Console.ReadLine();
+            double kurs2 = Convert.ToDouble(kurs1);
+
+            Console.Write("valyuta qiymati (input):");
+            string qiymat1 = Console.ReadLine();
+            double qiymat2 = Convert.ToDouble(qiymat1);
+
+            double Summa = kurs2 * qiymat2;
+
+            Console.WriteLine($"Sumdagi summa(output):{Summa}");
+
+
+
+
+        }
+    }
+}
+
+//3.Yoshni hisoblash
+//Foydalanuvchining tug’ilgan yilini (int x) consoledan oling. Uning yoshini kunlarda 
+//ifodalang. Kabisa yilini hisobga olmang
+//Input: x = 2004
+//Output: 6935
+//---------------- -
+//Input: x = 1996
+//Output: 9855
+
+namespace praktikum_task1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Tugilgan yilingizni kiriting (input):");
+            string ty = Console.ReadLine();
+            int x = Convert.ToInt32(ty);
+            int yil = 2024;
+            int kun = 365;
+            int yosh = (yil - x) * kun;
+            Console.WriteLine($"Kunlargadi yoshingiz(output):{yosh}");
+
+        }
+    }
+}
